@@ -142,9 +142,9 @@ for run in range(50):
 	Fermi = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Fermi)
-	if (abs(sumq-14) < error):
+	if (abs(sumq-val_electrons) < error):
 		break
-	elif (sumq < 14):
+	elif (sumq < val_electrons):
 		emin = Fermi
 	else:
 		emax = Fermi
@@ -160,9 +160,9 @@ for run in range(100):
 	Hf = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Hf)
-	if (abs(sumq-(14-sum_e)) < error):
+	if (abs(sumq-(val_electrons-sum_e)) < error):
 		break
-	elif (sumq < (14-sum_e)):
+	elif (sumq < (val_electrons-sum_e)):
 		emin = Hf
 	else:
 		emax = Hf
@@ -175,9 +175,9 @@ for run in range(100):
 	Ef = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Ef)
-	if (abs(sumq-(14+sum_e)) < error):
+	if (abs(sumq-(val_electrons+sum_e)) < error):
 		break
-	elif (sumq < (14+sum_e)):
+	elif (sumq < (val_electrons+sum_e)):
 		emin = Ef
 	else:
 		emax = Ef
