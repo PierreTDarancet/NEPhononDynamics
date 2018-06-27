@@ -90,7 +90,6 @@ while True:
 		continue
 	psuedo_files.append(line[2])
 	cnt += 1
-print(int(float(1.4E001)))
 val_electrons = get_valence(psuedo_files)
 m.close()
 
@@ -103,9 +102,9 @@ while True:
 		temp = float((mass.split())[0])
 		masses.append(temp)
 val_electrons = get_valence(masses)
-m.close()"""
+m.close()
 
-"""f = open("band.eig", "r")
+f = open("band.eig", "r")
 values = f.readline()
 i = 0
 for words in values.split():
@@ -143,9 +142,9 @@ for run in range(50):
 	Fermi = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Fermi)
-	if (abs(sumq-val_electrons) < error):
+	if (abs(sumq-14) < error):
 		break
-	elif (sumq < val_electrons):
+	elif (sumq < 14):
 		emin = Fermi
 	else:
 		emax = Fermi
@@ -161,9 +160,9 @@ for run in range(100):
 	Hf = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Hf)
-	if (abs(sumq-(val_electrons-sum_e)) < error):
+	if (abs(sumq-(14-sum_e)) < error):
 		break
-	elif (sumq < (val_electrons-sum_e)):
+	elif (sumq < (14-sum_e)):
 		emin = Hf
 	else:
 		emax = Hf
@@ -176,9 +175,9 @@ for run in range(100):
 	Ef = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Ef)
-	if (abs(sumq-(val_electrons+sum_e)) < error):
+	if (abs(sumq-(14+sum_e)) < error):
 		break
-	elif (sumq < (val_electrons+sum_e)):
+	elif (sumq < (14+sum_e)):
 		emin = Ef
 	else:
 		emax = Ef
