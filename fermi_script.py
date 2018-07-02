@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import math
-import urllib
+import urllib.request
+import os
 
 
 array = []
 masses = []
-max_diff = 0
 con_band = 0
 val_band = 0
 Fermi = 0
@@ -26,32 +26,17 @@ kB = 1.3806e-23
 J_ev = 6.242e18
 kT = 3000*kB*J_ev
 
-"""def get_valence(array):
-	e = open("element_info", "r")
-	a_num = 0
-	for ele in array:
-		e.readline() # skip the first line
-		amu = 0
-		while (float(amu) != ele):
-			string = e.readline().split()
-			amu = string[0]
-		temp = int(string[4])
-		a_num = temp + a_num
-		e.seek(0)
-	e.close()
-	return a_num"""
-
 def get_valence(array):
 	a_num = 0
 	temp = 0
 	for ele_num in range(len(array)):
 		file_name = (array[ele_num]).replace("upf", "UPF")
-		v = urllib.urlopen("http://nninc.cnf.cornell.edu/psp_files/" + file_name)
+		v = urllib.request.urlopen("http://nninc.cnf.cornell.edu/psp_files/" + file_name)
 		for line in v:
 			split = line.split()
 			if (not split or len(split) <= 2):
 				continue
-			if (split[2] == "valence"):
+			if (b'valence' in split[2]):
 				temp = int(float(split[0]))
 				break
 		a_num = temp + a_num
@@ -83,14 +68,17 @@ def fermi_integrate(num_kpts, num_bnds, Ef, set_low=None, set_high=None):
 	return sumq
 
 
-m = open("file", "r")
+for file in os.listdir(os.curdir):
+	if file.endswith(".in"):
+		input_file = file
+m = open(input_file, "r")
 num_ele = 0
 psuedo_files = []
 while True:
 	line = m.readline().split()
 	if not line:
 		continue
-	if (line[0] == "nat"):
+	if (line[0] == "ntyp"):
 		nat = int(line[2].replace(',',''))
 	if (line[0] == "ATOMIC_SPECIES"):
 		break
@@ -105,22 +93,11 @@ while True:
 		continue
 	psuedo_files.append(line[2])
 	cnt += 1
-print(int(float(1.4E001)))
 val_electrons = get_valence(psuedo_files)
 m.close()
 
-"""m = open("masses.txt", "r")
-while True:
-	mass = m.readline()
-	if not mass:
-		break
-	else:
-		temp = float((mass.split())[0])
-		masses.append(temp)
-val_electrons = get_valence(masses)
-m.close()"""
 
-"""f = open("band.eig", "r")
+f = open("band.eig", "r")
 values = f.readline()
 i = 0
 for words in values.split():
@@ -158,9 +135,9 @@ for run in range(50):
 	Fermi = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Fermi)
-	if (abs(sumq-14) < error):
+	if (abs(sumq-val_electrons) < error):
 		break
-	elif (sumq < 14):
+	elif (sumq < val_electrons):
 		emin = Fermi
 	else:
 		emax = Fermi
@@ -176,9 +153,9 @@ for run in range(100):
 	Hf = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Hf)
-	if (abs(sumq-(14-sum_e)) < error):
+	if (abs(sumq-(val_electrons-sum_e)) < error):
 		break
-	elif (sumq < (14-sum_e)):
+	elif (sumq < (val_electrons-sum_e)):
 		emin = Hf
 	else:
 		emax = Hf
@@ -191,9 +168,9 @@ for run in range(100):
 	Ef = 0.5*(emin+emax)
 	sumq = 0.0
 	sumq = fermi_integrate(num_kpts, num_bnds, Ef)
-	if (abs(sumq-(14+sum_e)) < error):
+	if (abs(sumq-(val_electrons+sum_e)) < error):
 		break
-	elif (sumq < (14+sum_e)):
+	elif (sumq < (val_electrons+sum_e)):
 		emin = Ef
 	else:
 		emax = Ef
@@ -234,7 +211,7 @@ c.write("Hfsthick\n")
 c.write(str(Efsthick) + "\n")
 
 f.close()
-c.close()"""
+c.close()
 
 
 
