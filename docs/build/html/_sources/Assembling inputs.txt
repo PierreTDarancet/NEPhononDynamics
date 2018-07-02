@@ -1,0 +1,24 @@
+
+Assembling inputs
+=================
+ 
+.. sidebar:: Home
+   
+   :ref:'Phonon_Dynamics'
+
+
+In this step, all the necessary input files are defined
+    
+| electron bandstructure  
+| phonon dispersion  
+| eigenvectors  
+| lattice vectors  
+| atomic info (masses, electron configuration, etc.)  
+| k-grid  
+| q-grid  
+| e-ph matrix elements  
+| third-order force constants  
+
+These files are located in the "input" file of the program folder.  
+
+In order to extract information necessary to find the potential scattering events in the material, the bandstructure of the material is considered. Specifically, information about the Fermi energy, conduction, and valence band are extracted. Further information can be read in the documentation of the fermi_script
