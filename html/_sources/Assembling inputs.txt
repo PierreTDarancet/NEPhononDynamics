@@ -7,13 +7,13 @@ Assembling inputs
 
    Extracting Information about the Bandstructure
 
-.. _Home: file:///C:/Users/sindh/build/Phonon_Dynamics.html#welcome-to-phonon-dynamics-s-documentation
+.. _Home: https://pbalaji98.github.io/NEPhononDynamics/
 
 .. _fermi_script: https://raw.githubusercontent.com/pbalaji98/NEPhononDynamics/master/fermi_script.py?token=Aip7i6x06uYgFSRfPiesB6Y83A4rWYndks5bQ5twwA%3D%3D
 
-.. _Next: file:///C:/Users/sindh/build/Finding%20phase%20spaces.html
+.. _Next: https://pbalaji98.github.io/NEPhononDynamics/Finding%20phase%20spaces.html
 
-.. _`Extracting information about the Bandstructure`: file:///C:/Users/sindh/build/Extracting%20Information%20about%20the%20Bandstructure.html
+.. _`Extracting information about the Bandstructure`: https://pbalaji98.github.io/NEPhononDynamics/Extracting%20Information%20about%20the%20Bandstructure.html
 
 
 .. sidebar:: Links
