@@ -10,7 +10,7 @@ Extracting Information about the Bandstructure
 
 .. _Back: Assembling%20inputs.html
 
-.. __: file: Example%20Material%20Characterization.html
+.. _`Example Material Characterization (Te2Mo)`: Example%20Material%20Characterization.html
 
 
 .. sidebar:: Links
@@ -21,7 +21,7 @@ Extracting Information about the Bandstructure
 
    **Related Information**
 
-   * | `Example Material Characterization (Te2Mo)`__
+   * | `Example Material Characterization (Te2Mo)`_
 
 To ensure that only the scattering events that follow the law of energy conservation are accounted for, the energy necessary for an electron and holes to move to and from the conduction and valence band must be examined.
 
