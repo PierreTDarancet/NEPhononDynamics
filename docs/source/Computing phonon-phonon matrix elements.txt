@@ -3,11 +3,11 @@
 Computing phonon-phonon matrix elements
 =======================================
 
-.. _Home: file:///C:/Users/sindh/build/Phonon_Dynamics.html#welcome-to-phonon-dynamics-s-documentation
+.. _Home: index.html
 
-.. _Previous: file:///C:/Users/sindh/build/Finding%20phase%20spaces.html
+.. _Previous: Finding%20phase%20spaces.html
 
-.. _Next: file:///C:/Users/sindh/build/Running%20phonon%20dynamics.html
+.. _Next: Running%20phonon%20dynamics.html
 
 
 .. sidebar:: Links

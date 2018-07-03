@@ -1,11 +1,11 @@
 Example Material Characterization (Te\ :sub:`2`\ Mo)
 ====================================================
 
-.. _Home: file:///C:/Users/sindh/build/Phonon_Dynamics.html#welcome-to-phonon-dynamics-s-documentation
+.. _Home: index.html
 
-.. _`Back (Assembling inputs)`: file:///C:/Users/sindh/build/Assembling%20inputs.html
+.. _`Back (Assembling inputs)`: Assembling%20inputs.html
 
-.. _`Back (Extracting Information about the Bandstructure)`: file:///C:/Users/sindh/build/Extracting%20Information%20about%20the%20Bandstructure.html
+.. _`Back (Extracting Information about the Bandstructure)`: Extracting%20Information%20about%20the%20Bandstructure.html
 
 
 .. sidebar:: Links

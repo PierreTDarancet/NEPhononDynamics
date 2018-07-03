@@ -6,11 +6,11 @@ Extracting Information about the Bandstructure
 
    Example Material Characterization
 
-.. _Home: file:///C:/Users/sindh/build/Phonon_Dynamics.html#welcome-to-phonon-dynamics-s-documentation
+.. _Home: index.html
 
-.. _Back: file:///C:/Users/sindh/build/Assembling%20inputs.html
+.. _Back: Assembling%20inputs.html
 
-.. __: file:///C:/Users/sindh/build/Example%20Material%20Characterization.html
+.. __: file: Example%20Material%20Characterization.html
 
 
 .. sidebar:: Links

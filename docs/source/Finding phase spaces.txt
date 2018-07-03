@@ -3,11 +3,11 @@
 Finding phase spaces
 ====================
 
-.. _Home: file:///C:/Users/sindh/build/Phonon_Dynamics.html#welcome-to-phonon-dynamics-s-documentation
+.. _Home: index.html
 
-.. _Previous: file:///C:/Users/sindh/build/Assembling%20inputs.html
+.. _Previous: Assembling%20inputs.html
 
-.. _Next: file:///C:/Users/sindh/build/Computing%20phonon-phonon%20matrix%20elements.html
+.. _Next: Computing%20phonon-phonon%20matrix%20elements.html
 
 
 .. sidebar:: Links
