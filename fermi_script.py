@@ -96,6 +96,19 @@ while True:
 val_electrons = get_valence(psuedo_files)
 m.close()
 
+<<<<<<< HEAD
+=======
+m = open("masses.txt", "r")
+while True:
+	mass = m.readline()
+	if not mass:
+		break
+	else:
+		temp = float((mass.split())[0])
+		masses.append(temp)
+val_electrons = get_valence(masses)
+m.close()
+>>>>>>> 129a52cc6d50c765929df240a361e3b20db478ea
 
 f = open("band.eig", "r")
 values = f.readline()
