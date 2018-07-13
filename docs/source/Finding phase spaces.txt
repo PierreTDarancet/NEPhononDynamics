@@ -3,6 +3,14 @@
 Finding phase spaces
 ====================
 
+.. toctree::
+   :hidden: 
+
+   Index of outputted files
+
+
+.. _`Index of outputted files`: Index%20of%20outputted%20files.html
+
 .. _Home: index.html
 
 .. _Previous: Assembling%20inputs.html
@@ -16,6 +24,10 @@ Finding phase spaces
    * | Home_
    * | Previous_  
    * | Next_
+
+   **Related Information**
+
+   * | `Index of outputted files`_
 
 
 This step finds all the scattering events that evolve in the material and checks their feasibility. This is accomplished by reading the wave vectors of the electrons and phonons respectively (designated as k_pts and q_pts respectively). Electron-phonon and hole-phonon interactions are found by looking for differences in the bandstructure between the original k_pt and the k_pt after a phonon interaction (the addition of the respetive k and q vectors) and seeing if the resulting energy is less than some error range. Given below is a snippet of the routine used. The checking of the bandstructure is limtied to a band minimum and band maximum based on the location of the conduction and valence band and whether the particle is an electron or hole
@@ -48,6 +60,11 @@ This step finds all the scattering events that evolve in the material and checks
        }``
 
 
-A similar routine is used for phonon-phonon interactions. As seen above, these scattering events are placed in matrices are written onto an outfile used for the next step of the code.
+A similar routine is used for phonon-phonon interactions. These scattering events are written into an outfile to be used for computing phonon-phonon events. Specifically, the outfiles are denoted as
+
+- tot_ph_scat_events.txt
+- scat_events_binary
+
+Furthermore, input files read in this phase are written as data output and used for in the next phase well. 
 
                                         

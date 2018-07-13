@@ -1,0 +1,33 @@
+
+========================
+Index of outputted files
+========================
+
+.. _Home: index.html
+
+.. _Back: Finding%20phase%20spaces.html
+
+.. sidebar:: Links
+   :subtitle: **Main Pages**
+
+   * | Home_ 
+   * | Back_
+
+**scat_events_binary**: 3rd-order phonon interactions. Lists mode, polarization, and event type (either absorption or emission)
+
+**data_output (dir)**:
+
+* Ek.txt: Lists all the energies of the kpts
+* Freq.txt: Lists all the frequencies of the qts
+* group_vel_out.txt: Lists all the group velocities of the qts
+* masses.txt: Lists the atomic masses of the compound
+* third_order_ifc.txt: Lists the third-order forces
+
+**eph_scat_events.txt**: Outputs every electron/hole phonon interaction. Lists the charge (either 'h' or 'e'), the qpt, the number of phonon bands, the kpt, the initial band of the electron, the final band of the electron, and the marix element
+
+**output (dir)**:
+
+* phase_space_abs.txt: Lists all the phases spaces for absorption events
+* phase_space_emi.txt: Lists all the phases spacse for emission events
+
+**filout**: Lists qpts, reciprocal axis, lattice vectors

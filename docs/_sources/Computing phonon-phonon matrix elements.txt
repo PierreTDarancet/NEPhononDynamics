@@ -17,4 +17,16 @@ Computing phonon-phonon matrix elements
    * | Previous_  
    * | Next_
 
---blank--
+In this step, all the phonon-phonon matrix elements are computed for the revelant scattering events. The work is split among multiple threads to decrease the computing time. Since phonon scattering is being assessed, each event has a mode and a event_type. The mode is a vector containing the positions and polarizations of the phonons involved in the scattering event and the event_type characterizes the scattering as either absorption (q1 + q2 = q3) or emission (q1 = q2 + q3). The matrix element is then computed.
+
+To compute the three-phonin scattering matrix element, a Fourier transform of the real-spae third-order force constants is used. Below is the equation.
+
+.. image:: PP_Scat_Equation.PNG
+   :width: 800px
+   :align: left
+
+
+
+
+
+
