@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Running phonon dynamics" href="Running phonon dynamics.html" />
-    <link rel="prev" title="Finding phase spaces" href="Finding phase spaces.html" />
+    <link rel="prev" title="Index of outputted files" href="Index of outputted files.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -52,9 +52,22 @@
 </li>
 </ul>
 </div>
-<p>In this step, all the phonon-phonon matrix elements are computed for the revelant scattering events. The work is split among multiple threads to decrease the computing time. Since phonon scattering is being assessed, each event has a mode and a event_type. The mode is a vector containing the positions and polarizations of the phonons involved in the scattering event and the event_type characterizes the scattering as either absorption (q1 + q2 = q3) or emission (q1 = q2 + q3). The matrix element is then computed.</p>
-<p>To compute the three-phonin scattering matrix element, a Fourier transform of the real-spae third-order force constants is used. Below is the equation.</p>
-<a class="reference internal image-reference" href="_images/PP_Scat_Equation.PNG"><img alt="_images/PP_Scat_Equation.PNG" class="align-left" src="_images/PP_Scat_Equation.PNG" style="width: 800px;" /></a>
+<div class="line-block">
+<div class="line">In this step, all the phonon-phonon matrix elements are computed for the revelant scattering events. The work is split among multiple threads to decrease the computing time. Since phonon scattering is being assessed, each event has a mode and a event_type. The mode is a vector containing the positions and polarizations of the phonons involved in the scattering event and the event_type characterizes the scattering as either absorption (q1 + q2 = q3) or emission (q1 = q2 + q3). The matrix element is then computed.</div>
+</div>
+<div class="sidebar">
+<p class="first sidebar-title">Key (Phonon-Phonon Scattering)</p>
+<a class="reference internal image-reference" href="_images/Third.PNG"><img alt="_images/Third.PNG" class="align-right" src="_images/Third.PNG" style="width: 30%;" /></a>
+<p class="last">Third-Order Force Constants:</p>
+</div>
+<div class="line-block">
+<div class="line">To compute the three-phonon scattering matrix</div>
+<div class="line">element, a Fourier transform of the real-space</div>
+<div class="line">third-order force constants is used.</div>
+</div>
+<p>Below is the equation.</p>
+<a class="reference internal image-reference" href="_images/PP_First.PNG"><img alt="_images/PP_First.PNG" class="align-left" src="_images/PP_First.PNG" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/PP_Second.PNG"><img alt="_images/PP_Second.PNG" class="align-left" src="_images/PP_Second.PNG" style="width: 300px;" /></a>
 </div>
 
 
@@ -66,7 +79,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="Phonon_Dynamics.html">Documentation overview</a><ul>
-      <li>Previous: <a href="Finding phase spaces.html" title="previous chapter">Finding phase spaces</a></li>
+      <li>Previous: <a href="Index of outputted files.html" title="previous chapter">Index of outputted files</a></li>
       <li>Next: <a href="Running phonon dynamics.html" title="next chapter">Running phonon dynamics</a></li>
   </ul></li>
 </ul>

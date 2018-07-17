@@ -5,7 +5,7 @@ Running phonon dynamics
 
 .. _Home: index.html
 
-.. _Previous: Finding%20phase%20spaces.html
+.. _Previous: Computing%20phonon-phonon%20matrix%20elements.html
 
 .. sidebar:: Links
    :subtitle: **Main Pages**
@@ -68,4 +68,5 @@ In this last step, the resulting atomic dynamics are computed, with time taken i
 
    Electron/Hole Energy Element:
 
+After each time-step, the occupation states each of the particles are recalculated. The phonon occupation state changes due to the cumulative interactions it has with holes and electrons. Each hole and electron changes occupation states based on its temperature. As both particles either lose or gain energy in the process, temperature change can be found based on both particles' specific heat.
 
