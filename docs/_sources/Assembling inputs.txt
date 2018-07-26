@@ -9,7 +9,7 @@ Assembling inputs
 
 .. _Home: index.html
 
-.. _fermi_script: https://raw.githubusercontent.com/pbalaji98/NEPhononDynamics/master/fermi_script.py?token=Aip7i6x06uYgFSRfPiesB6Y83A4rWYndks5bQ5twwA%3D%3D
+.. _fermi_script: https://raw.githubusercontent.com/PierreTDarancet/NEPhononDynamics/master/fermi_script.py?token=Aip7i4wCNgQR2lbglPzuA_V2rI5pSleVks5bY3xqwA%3D%3D
 
 .. _Next: Finding%20phase%20spaces.html
 
