@@ -1,8 +1,10 @@
-import matplotlib.pyplot as plt
+##import matplotlib.pyplot as plt
 import math
 import urllib.request
 import os
 
+
+# 0.28 charges for -3.6
 
 array = []
 masses = []
@@ -25,6 +27,14 @@ error = 0.001
 kB = 1.3806e-23
 J_ev = 6.242e18
 kT = 3000*kB*J_ev
+
+which_charges = input('Input "holes", "electrons", or "both" ')
+while (which_charges != "holes" and which_charges != "electrons" and which_charges != "both"):
+	which_charges = input('Input "holes", "electrons", or "both" ')
+
+num_charges = float(input("Input the number of shifted charges "))
+#num_charges = 0
+
 
 def get_valence(array):
 	a_num = 0
@@ -63,14 +73,108 @@ def fermi_integrate(num_kpts, num_bnds, Ef, set_low=None, set_high=None):
 				continue
 			E = array[i][j]
 			sumq = sumq + fermi_step(E, Ef)*2.0*chunk
-			if (E >= (Ef + 5*kT)):
-				return sumq
+			#if (E >= (Ef + 5*kT)):
+				#return sumq
 	return sumq
+
+
+def electrons():
+	sum_e = val_electrons + num_charges
+
+	emin = Fermi
+	emax = emax_abs
+
+	for run in range(50):
+		Ef = 0.5*(emin+emax)
+		sumq = 0.0
+		sumq = fermi_integrate(num_kpts, num_bnds, Ef)
+		if (abs(sumq-(sum_e)) < error):
+			break
+		elif (sumq < (sum_e)):
+			emin = Ef
+		else:
+			emax = Ef
+
+	## Find conduction and valence bands
+	mini = 100
+	for i in range(num_bnds):
+		diff = abs(abs(min(array[i]))-abs(Ef))
+		if (diff < mini):
+			con_band = i+2
+			val_band = i
+			mini = diff
+
+	## bnd_min and bnd_max for electrons and holes
+	E_bnd_min = val_band
+	E_bnd_max = con_band
+
+	c = open('fermi_contents', 'w+')
+	c.write(which_charges + "\n")
+
+	c.write("Ef\n")
+	c.write(str(Ef) + "\n")
+	c.write("E_bnd_min\n")
+	c.write(str(E_bnd_min) + "\n")
+	c.write("E_bnd_max\n")
+	c.write(str(E_bnd_max) + "\n")
+	c.write("Efsthick\n")
+	c.write(str(Efsthick) + "\n")
+
+	c.close()
+
+
+def holes():
+	sum_h = val_electrons - num_charges
+
+	emin = emin_abs
+	emax = Fermi
+
+	for run in range(50):
+		Hf = 0.5*(emin+emax)
+		sumq = 0.0
+		sumq = fermi_integrate(num_kpts, num_bnds, Hf)
+		if (abs(sumq-(sum_h)) < error):
+			break
+		elif (sumq < (sum_h)):
+			emin = Hf
+		else:
+			emax = Hf
+
+	mini = 100
+	for i in range(num_bnds):
+		diff = abs(abs(max(array[i]))-abs(Hf))
+		if (diff < mini):
+			con_band = i+1
+			val_band = i-1
+			mini = diff
+
+	H_bnd_min = val_band
+	H_bnd_max = con_band
+
+	if (which_charges == "both"):
+		c = open('fermi_contents', 'a')
+	else:
+		c = open('fermi_contents', 'w+')
+		c.write(which_charges + "\n")
+
+	c.write("Hf\n")
+	c.write(str(Hf) + "\n")
+	c.write("H_bnd_min\n")
+	c.write(str(H_bnd_min) + "\n")
+	c.write("H_bnd_max\n")
+	c.write(str(H_bnd_max) + "\n")
+	c.write("Hfsthick\n")
+	c.write(str(Efsthick) + "\n")
+
+	c.close()
+
 
 
 for file in os.listdir(os.curdir):
 	if file.endswith(".in"):
 		input_file = file
+	if file.endswith(".ephmatrix_all"):
+		eph_filename = "../input/" + file
 m = open(input_file, "r")
 num_ele = 0
 psuedo_files = []
@@ -79,14 +183,18 @@ while True:
 	if not line:
 		continue
 	if (line[0] == "ntyp"):
-		nat = int(line[2].replace(',',''))
+		ntyp = int(line[2].replace(',',''))
+	if (line[0] == "nat"):
+		nat = int(line[2][:1].replace(',',''))
 	if (line[0] == "ATOMIC_SPECIES"):
 		break
+
+nat = nat/ntyp
 
 cnt = 0
 
 while True:
-	if (cnt == nat):
+	if (cnt == ntyp):
 		break
 	line = m.readline().split()
 	if not line:
@@ -94,21 +202,9 @@ while True:
 	psuedo_files.append(line[2])
 	cnt += 1
 val_electrons = get_valence(psuedo_files)
+val_electrons *= nat
 m.close()
 
-<<<<<<< HEAD
-=======
-m = open("masses.txt", "r")
-while True:
-	mass = m.readline()
-	if not mass:
-		break
-	else:
-		temp = float((mass.split())[0])
-		masses.append(temp)
-val_electrons = get_valence(masses)
-m.close()
->>>>>>> 129a52cc6d50c765929df240a361e3b20db478ea
 
 f = open("band.eig", "r")
 values = f.readline()
@@ -155,73 +251,17 @@ for run in range(50):
 	else:
 		emax = Fermi
 
-## Add up all the states above the fermi energy
-sumq = fermi_integrate(num_kpts, num_bnds, Fermi, set_low=Fermi)
-sum_e = sumq
 
-emin = emin_abs
-emax = Fermi
+if (which_charges == "electrons" or which_charges ==  "both"):
+	electrons()
 
-for run in range(100):
-	Hf = 0.5*(emin+emax)
-	sumq = 0.0
-	sumq = fermi_integrate(num_kpts, num_bnds, Hf)
-	if (abs(sumq-(val_electrons-sum_e)) < error):
-		break
-	elif (sumq < (val_electrons-sum_e)):
-		emin = Hf
-	else:
-		emax = Hf
+if (which_charges == "holes" or which_charges ==  "both"):
+	holes()
 
+c = open('fermi_contents', 'a')
 
-emin = Fermi
-emax = emax_abs
-
-for run in range(100):
-	Ef = 0.5*(emin+emax)
-	sumq = 0.0
-	sumq = fermi_integrate(num_kpts, num_bnds, Ef)
-	if (abs(sumq-(val_electrons+sum_e)) < error):
-		break
-	elif (sumq < (val_electrons+sum_e)):
-		emin = Ef
-	else:
-		emax = Ef
-
-## Find conduction and valence bands
-mini = 100
-for i in range(num_bnds):
-	diff = abs(min(array[i])-Ef)
-	if (diff < mini):
-		con_band = i+1
-		val_band = i
-		mini = diff
-
-## bnd_min and bnd_max for electrons and holes
-E_bnd_min = val_band
-E_bnd_max = con_band+1
-H_bnd_min = val_band-1
-H_bnd_max = val_band+1
-
-c = open('fermi_contents', 'w+')
-
-c.write("Ef\n")
-c.write(str(Ef) + "\n")
-c.write("E_bnd_min\n")
-c.write(str(E_bnd_min) + "\n")
-c.write("E_bnd_max\n")
-c.write(str(E_bnd_max) + "\n")
-c.write("Efsthick\n")
-c.write(str(Efsthick) + "\n")
-
-c.write("Hf\n")
-c.write(str(Hf) + "\n")
-c.write("H_bnd_min\n")
-c.write(str(H_bnd_min) + "\n")
-c.write("H_bnd_max\n")
-c.write(str(H_bnd_max) + "\n")
-c.write("Hfsthick\n")
-c.write(str(Efsthick) + "\n")
+c.write("eph_filename\n")
+c.write(eph_filename + "\n")
 
 f.close()
 c.close()

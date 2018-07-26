@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Computing phonon-phonon matrix elements &#8212; Phonon_Dynamics  documentation</title>
+    <title>Index of outputted files &#8212; Phonon_Dynamics  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Running phonon dynamics" href="Running phonon dynamics.html" />
-    <link rel="prev" title="Index of outputted files" href="Index of outputted files.html" />
+    <link rel="prev" title="Running phonon dynamics" href="Running phonon dynamics.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,8 +31,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="computing-phonon-phonon-matrix-elements">
-<h1>Computing phonon-phonon matrix elements<a class="headerlink" href="#computing-phonon-phonon-matrix-elements" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="index-of-outputted-files">
+<h1>Index of outputted files<a class="headerlink" href="#index-of-outputted-files" title="Permalink to this headline">¶</a></h1>
 <div class="sidebar">
 <p class="first sidebar-title">Links</p>
 <p class="sidebar-subtitle"><strong>Main Pages</strong></p>
@@ -43,39 +42,18 @@
 </div>
 </li>
 <li><div class="first line-block">
-<div class="line"><a class="reference external" href="Finding%20phase%20spaces.html">Previous</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="Running%20phonon%20dynamics.html">Next</a></div>
+<div class="line"><a class="reference external" href="Running%20phonon%20dynamics.html">Back</a></div>
 </div>
 </li>
 </ul>
 </div>
-<div class="line-block">
-<div class="line">In this step, all the phonon-phonon matrix elements are computed for the revelant scattering events. The work is split among multiple threads to decrease the computing time. Since phonon scattering is being assessed, each event has a mode and a event_type. The mode is a vector containing the positions and polarizations of the phonons involved in the scattering event and the event_type characterizes the scattering as either absorption (q1 + q2 = q3) or emission (q1 = q2 + q3). The matrix element is then computed.</div>
-</div>
-<div class="sidebar">
-<p class="first sidebar-title">Key (Phonon-Phonon Scattering)</p>
-<a class="reference internal image-reference" href="_images/Third.PNG"><img alt="_images/Third.PNG" class="align-right" src="_images/Third.PNG" style="width: 30%;" /></a>
-<p class="last">Third-Order Force Constants:</p>
-</div>
-<div class="line-block">
-<div class="line">To compute the three-phonon scattering matrix</div>
-<div class="line">element, a Fourier transform of the real-space</div>
-<div class="line">third-order force constants is used.</div>
-</div>
-<p>Below is the equation.</p>
-<a class="reference internal image-reference" href="_images/PP_First.PNG"><img alt="_images/PP_First.PNG" class="align-left" src="_images/PP_First.PNG" style="width: 300px;" /></a>
-<a class="reference internal image-reference" href="_images/PP_Second.PNG"><img alt="_images/PP_Second.PNG" class="align-left" src="_images/PP_Second.PNG" style="width: 300px;" /></a>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<p>An binary file is outputted containing all the matrix elements generated for all phonon-phonon interactions (<strong>matrix_elements_binary_all</strong>)</p>
+<p><strong>output (dir)</strong>: contains accounts, taken every 0.2 ps, of each phonon's frequency and temperature in the lattice structure</p>
+<p><strong>output_occ (dir)</strong>: contains accounts, taken every 0.2 ps, of each phonon's frequency and energy in the lattice structure</p>
+<p><strong>output_occ_change_ep (dir)</strong>: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the electron from its respective interaction</p>
+<p><strong>output_occ_change_hp (dir)</strong>: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the hole from its respective interaction</p>
+<p><strong>output_occ_change_pp (dir)</strong>: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the phonon from its respective interaction</p>
+<p><strong>T_e.txt</strong>: contains the temperature of the electrons and holes every 0.2 ps throuhgout the evolution</p>
+<p><strong>dos.txt</strong>: Contains the density of states of the phonons</p>
 </div>
 
 
@@ -87,15 +65,16 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="Phonon_Dynamics.html">Documentation overview</a><ul>
-      <li>Previous: <a href="Index of outputted files.html" title="previous chapter">Index of outputted files</a></li>
-      <li>Next: <a href="Running phonon dynamics.html" title="next chapter">Running phonon dynamics</a></li>
+  <li><a href="Running phonon dynamics.html">Running phonon dynamics</a><ul>
+      <li>Previous: <a href="Running phonon dynamics.html" title="previous chapter">Running phonon dynamics</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/Computing phonon-phonon matrix elements.txt"
+      <li><a href="_sources/Phonon_dynamics_files.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -123,7 +102,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/Computing phonon-phonon matrix elements.txt"
+      <a href="_sources/Phonon_dynamics_files.txt"
           rel="nofollow">Page source</a>
     </div>
 

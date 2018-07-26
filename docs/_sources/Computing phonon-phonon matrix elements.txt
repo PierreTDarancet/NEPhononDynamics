@@ -42,6 +42,14 @@ Below is the equation.
    :width: 300px
    :align: left
 
+|
+|
+|
+|
+|
+
+An binary file is outputted containing all the matrix elements generated for all phonon-phonon interactions (**matrix_elements_binary_all**)
+
 
 
 

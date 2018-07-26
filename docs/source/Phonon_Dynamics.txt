@@ -19,7 +19,15 @@ The code is divided into multiple steps:
    Running phonon dynamics
 
 
-Running the code is acheived through running the bash file **Phonon_Dynamics.sh**
+Running the code is acheived through running the bash file **Phonon_Dynamics_1.sh** and **Phonon_Dynamics_2.sh**. The code can run dynamics for holes, electrons, or both.
+
+
+The code offers these other functionalities as well
+
+| * Graphing the compound's bandstructure
+| * Graphing the temperature decay of electrons and holes as well as the thermalization of phonons
+| * Graphing phonon thermalization as a function of modes
+
 
 
 

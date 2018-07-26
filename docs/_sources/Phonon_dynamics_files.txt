@@ -1,0 +1,30 @@
+
+========================
+Index of outputted files
+========================
+
+.. _Home: index.html
+
+.. _Back: Running%20phonon%20dynamics.html
+
+.. sidebar:: Links
+   :subtitle: **Main Pages**
+
+   * | Home_ 
+   * | Back_
+
+
+**output (dir)**: contains accounts, taken every 0.2 ps, of each phonon's frequency and temperature in the lattice structure
+
+**output_occ (dir)**: contains accounts, taken every 0.2 ps, of each phonon's frequency and energy in the lattice structure
+
+**output_occ_change_ep (dir)**: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the electron from its respective interaction
+
+**output_occ_change_hp (dir)**: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the hole from its respective interaction
+
+**output_occ_change_pp (dir)**: contains accounts, taken every 0.2 ps, of each phonon's frequency and occupation change of the phonon from its respective interaction
+
+
+**T_e.txt**: contains the temperature of the electrons and holes every 0.2 ps throuhgout the evolution
+
+**dos.txt**: Contains the density of states of the phonons
