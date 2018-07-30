@@ -1,0 +1,6 @@
+.. index::
+   Finding Scattering Events; Classes and Functions
+
+.. py:function:: spam(eggs)
+                 ham(eggs)
+   :noindex:
