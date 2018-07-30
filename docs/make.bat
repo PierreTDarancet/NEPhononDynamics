@@ -8,7 +8,7 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set SOURCEDIR=source
-set BUILDDIR=..
+set BUILDDIR=../../docs-build
 set SPHINXPROJ=Phonon_Dynamics
 
 if "%1" == "" goto help
