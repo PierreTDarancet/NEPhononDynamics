@@ -1,0 +1,72 @@
+=====================
+Classes Supplementary
+=====================
+
+.. _Home: index.html
+
+.. _Back: Classes%20and%20Functions.html
+
+.. sidebar:: Links
+   :subtitle: **Main Pages**
+
+   * | Home_  
+   * | Back_
+
+.. cpp:class:: ph_mode
+    :noindex:
+
+    | **double** qx,qy,qz; - q-point coordinates (in crystal coordinates).  
+    | **double** \*omega_q\; - frequencies of the various polarizations at this q-point.  
+    | **double** \**eig_vec_q_real\; - real part of the eigenvectors at this q-point.  
+    | **double** \**eig_vec_q_image\; - imaginary part of the eigenvectors at this q-point.  
+    | **double** \*vg_x\; - x-component of group velocity at this point.
+    | **double** \*vg_y\; - y-component of group velocity at this point
+    | **double** \*vg_z\; - z-component of group velocity at this point
+    | **double** \*phase_space_abs\; - phase space for phonon absorption processes
+    | **double** \*phase_space_emi\; - phase space for phonon emission processes
+    | vector **<int>** \*mode_index1\; - vector of modes that interact with this mode 
+    | vector **<int>** \*pol_index1\; -  vector of the corresponding polarizations
+    | vector **<int>** \*mode_index2\; - vector of modes that interact with this mode
+    | vector **<int>** \*pol_index2\; -  vector of the corresponding polarizations
+    | vector **<char>** \*scat_type\; - vector that stores the scattering type (absorption or emission)
+    | vector **<double>** \*matrix_element_sq\; - vector that stores the square of matrix element
+    | vector **<double>** \*broadening\; - vector that stores the broadening
+    | **double** \*f_old\; - phonon occupation function 
+    | **double** \*f_new\; - new occupation function
+    | vector **<int>** \*mode_kindex\; - kpt of interaction
+    | vector **<int>** \*mode_kqindex\; - k+qpt of interaction
+    | vector **<int>** \*e_band_index\; - band of the kpt of the interaction
+    | vector **<int>** \*e_band_index_kq\; - band of the k+qpt of the interaction
+    | vector **<double>** \*eph_matrix_element\; - matrix element
+    | vector **<int>** \eph_mat_array_index\; - vector containing the indices where this phonon mode occurs in the eph array
+
+
+.. cpp:class:: el_mode
+   :noindex:
+
+   | **double** kx,ky,kz; - k-point coordinates (in crystal coordinates)
+   | **double** \*E_k\; - energies of the various bands at this k-point
+   | **double** \*f_old\; - old electron occupation function
+   | **double** \*f_new\; - new electron occupation function
+   | vector **<int>** eph_mat_array_index; - vector containing the indices where this electron mode occurs in the eph array
+
+
+.. cpp:class:: anharmonic_ifc
+   :noindex:
+
+   | **double** cell2_x,cell2_y,cell2_z; - coordinates of the unit cell to which the 2nd atom belongs.
+   | **double** cell3_x,cell3_y,cell3_z; - coordinates of the unit cell to which the 3rd atom belongs.
+   | **int** atom1,atom2,atom3; - atom numbers of the three atoms
+   | **int** dir[27][3]; - Cartesian directions for the three atoms. Takes values 1,2,3
+   | **double** phi3[27]; - 3rd order force constant for each of the different permutations of directions
+
+
+.. cpp:class:: el_ph
+   :noindex:
+
+   | **int** kpt_index; - kpt of coupling
+   | **int** qpt_index; - qpt of coupling
+   | **int** ibnd; - kband of coupling
+   | **int** jbnd; - k+qband of couplingg
+   | **int** pol; - phonon polarization
+   | **double** matrix_ele; - interaction matrix element

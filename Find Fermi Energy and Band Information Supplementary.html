@@ -1,0 +1,125 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="python">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Find Fermi Energy and Band Information Supplementary &#8212; Phonon_Dynamics  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Find Scattering Events Supplementary" href="Find Scattering Events Supplementary.html" />
+    <link rel="prev" title="Classes and Functions" href="Classes and Functions.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="find-fermi-energy-and-band-information-supplementary">
+<h1>Find Fermi Energy and Band Information Supplementary<a class="headerlink" href="#find-fermi-energy-and-band-information-supplementary" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="get_valence">
+<code class="descname">get_valence</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#get_valence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the valence electrons of the compound by looking psuedo-potential files
+of the elements</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fermi_step">
+<code class="descname">fermi_step</code><span class="sig-paren">(</span><em>e</em>, <em>ef</em><span class="sig-paren">)</span><a class="headerlink" href="#fermi_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the probability of finding a particle with energy (e) given the Fermi energy (ef)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fermi_integrate">
+<code class="descname">fermi_integrate</code><span class="sig-paren">(</span><em>num_kpts</em>, <em>num_bnds</em>, <em>ef</em>, <em>set_low=None</em>, <em>set_high=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fermi_integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the number of electrons at a specific energy (ef) by mutiplying the available states, the degeneracy, and the fermi_dirac distribution for that energy</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="electrons">
+<code class="descname">electrons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#electrons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the adjusted Fermi energy for electrons given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="holes">
+<code class="descname">holes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#holes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the adjusted Fermi energy for holes given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="Phonon_Dynamics.html">Documentation overview</a><ul>
+  <li><a href="Classes and Functions.html">Classes and Functions</a><ul>
+      <li>Previous: <a href="Classes and Functions.html" title="previous chapter">Classes and Functions</a></li>
+      <li>Next: <a href="Find Scattering Events Supplementary.html" title="next chapter">Find Scattering Events Supplementary</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Find Fermi Energy and Band Information Supplementary.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Praveen Balaiji.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/Find Fermi Energy and Band Information Supplementary.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

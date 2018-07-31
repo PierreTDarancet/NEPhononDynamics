@@ -1,0 +1,301 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="python">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Functions Supplementary &#8212; Phonon_Dynamics  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes Supplementary" href="Classes Supplementary.html" />
+    <link rel="prev" title="Classes and Functions" href="Classes and Functions.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="functions-supplementary">
+<h1>Functions Supplementary<a class="headerlink" href="#functions-supplementary" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Links</p>
+<p class="sidebar-subtitle"><strong>Main Pages</strong></p>
+<ul class="last">
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="index.html">Home</a></div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><a class="reference external" href="genindex.html">Back</a></div>
+</div>
+</li>
+</ul>
+</div>
+<dl class="function">
+<dt id="get_valence">
+<code class="descname">get_valence</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#get_valence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the valence electrons of the compound by looking psuedo-potential files
+of the elements</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fermi_step">
+<code class="descname">fermi_step</code><span class="sig-paren">(</span><em>e</em>, <em>ef</em><span class="sig-paren">)</span><a class="headerlink" href="#fermi_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Fermi_Dirac distribution given an energy (e) the Fermi energy (ef) at a set temperature</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fermi_integrate">
+<code class="descname">fermi_integrate</code><span class="sig-paren">(</span><em>num_kpts</em>, <em>num_bnds</em>, <em>ef</em>, <em>set_low=None</em>, <em>set_high=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fermi_integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the number of electrons at a specific energy (ef) by mutiplying the available states, the degeneracy, and the fermi_dirac distribution for that energy</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="electrons">
+<code class="descname">electrons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#electrons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the adjusted Fermi energy for electrons given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="holes">
+<code class="descname">holes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#holes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the adjusted Fermi energy for holes given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311read_omegaqRP7ph_modeRiRiRiRiRiRi">
+<span id="_CPPv211read_omegaqRP7ph_modeRiRiRiRiRiRi"></span><span id="read_omegaq__ph_modePR.iR.iR.iR.iR.iR.iR"></span>void <code class="descname">read_omegaq</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *&amp;<em>ph</em>, int &amp;<em>num_qpts</em>, int &amp;<em>num_bands</em>, int &amp;<em>nat</em>, int &amp;<em>N1</em>, int &amp;<em>N2</em>, int &amp;<em>N3</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311read_omegaqRP7ph_modeRiRiRiRiRiRi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the &quot;band.eig&quot; file to get the number of qpts, bands, number of atoms in a unit, and the dimensions of the q-grid</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38read_eigP7ph_modeiiPdi">
+<span id="_CPPv28read_eigP7ph_modeiiPdi"></span><span id="read_eig__ph_modeP.i.i.doubleP.i"></span>void <code class="descname">read_eig</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em>, double *<em>mass</em>, int <em>nat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38read_eigP7ph_modeiiPdi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads eigenvalues from the &quot;matydn.modes&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv311read_massesRPdi">
+<span id="_CPPv211read_massesRPdi"></span><span id="read_masses__doublePR.i"></span>void <code class="descname">read_masses</code><span class="sig-paren">(</span>double *&amp;<em>mass</em>, int <em>nat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv311read_massesRPdi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads masses from the &quot;masses.txt&quot; file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312write_massesPdi">
+<span id="_CPPv212write_massesPdi"></span><span id="write_masses__doubleP.i"></span>void <code class="descname">write_masses</code><span class="sig-paren">(</span>double *<em>mass</em>, int <em>nat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312write_massesPdi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes masses to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312write_omegaqP7ph_modeii">
+<span id="_CPPv212write_omegaqP7ph_modeii"></span><span id="write_omegaq__ph_modeP.i.i"></span>void <code class="descname">write_omegaq</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312write_omegaqP7ph_modeii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes frequencies to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv320read_third_order_ifcRP14anharmonic_ifcRii">
+<span id="_CPPv220read_third_order_ifcRP14anharmonic_ifcRii"></span><span id="read_third_order_ifc__anharmonic_ifcPR.iR.i"></span>void <code class="descname">read_third_order_ifc</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv314anharmonic_ifc" title="anharmonic_ifc">anharmonic_ifc</a> *&amp;<em>third_order</em>, int &amp;<em>num_tensors</em>, int <em>nat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320read_third_order_ifcRP14anharmonic_ifcRii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads third-order forces from &quot;FORCE_CONSTANTS_3RD&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321write_third_order_ifcP14anharmonic_ifci">
+<span id="_CPPv221write_third_order_ifcP14anharmonic_ifci"></span><span id="write_third_order_ifc__anharmonic_ifcP.i"></span>void <code class="descname">write_third_order_ifc</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv314anharmonic_ifc" title="anharmonic_ifc">anharmonic_ifc</a> *<em>third_order</em>, int <em>num_tensors</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321write_third_order_ifcP14anharmonic_ifci" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes third-order forces to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310multiply_cddddRdRd">
+<span id="_CPPv210multiply_cddddRdRd"></span><span id="multiply_c__double.double.double.double.doubleR.doubleR"></span>void <code class="descname">multiply_c</code><span class="sig-paren">(</span>double <em>num1_r</em>, double <em>num1_i</em>, double <em>num2_r</em>, double <em>num2_i</em>, double &amp;<em>num3_r</em>, double &amp;<em>num3_i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310multiply_cddddRdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the product of two complex numbers</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv322compute_matrix_elementiiiiiiiiP7ph_modeP14anharmonic_ifciPdPPd">
+<span id="_CPPv222compute_matrix_elementiiiiiiiiP7ph_modeP14anharmonic_ifciPdPPd"></span><span id="compute_matrix_element__i.i.i.i.i.i.i.i.ph_modeP.anharmonic_ifcP.i.doubleP.doublePP"></span>double <code class="descname">compute_matrix_element</code><span class="sig-paren">(</span>int <em>nq1</em>, int <em>nq2</em>, int <em>nq3</em>, int <em>p1</em>, int <em>p2</em>, int <em>p3</em>, int <em>num_qpts</em>, int <em>num_bands</em>, <a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, <a class="reference internal" href="Classes Supplementary.html#_CPPv314anharmonic_ifc" title="anharmonic_ifc">anharmonic_ifc</a> *<em>third_order</em>, int <em>num_tensors</em>, double *<em>mass</em>, double **<em>recip_lat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322compute_matrix_elementiiiiiiiiP7ph_modeP14anharmonic_ifciPdPPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the phonon-phonon matrix element using the equation provided in the &quot;find_matrix_elements section&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv34f_BEdd">
+<span id="_CPPv24f_BEdd"></span><span id="f_BE__double.double"></span>double <code class="descname">f_BE</code><span class="sig-paren">(</span>double <em>omega</em>, double <em>temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv34f_BEdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the Bose-Einstein Distribution given a phonon frequency and a temperature</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315find_q_pt_indexdddiii">
+<span id="_CPPv215find_q_pt_indexdddiii"></span><span id="find_q_pt_index__double.double.double.i.i.i"></span>int <code class="descname">find_q_pt_index</code><span class="sig-paren">(</span>double <em>qx</em>, double <em>qy</em>, double <em>qz</em>, int <em>N1</em>, int <em>N2</em>, int <em>N3</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315find_q_pt_indexdddiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Finds the qpt index in the grid associate with a given phonon wave vector</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv319read_reciprocal_latRPPd">
+<span id="_CPPv219read_reciprocal_latRPPd"></span><span id="read_reciprocal_lat__doublePPR"></span>void <code class="descname">read_reciprocal_lat</code><span class="sig-paren">(</span>double **&amp;<em>recip_lat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319read_reciprocal_latRPPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads recprocial lattice values from &quot;reprocial_lat.txt&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv312read_lat_vecRPPdRd">
+<span id="_CPPv212read_lat_vecRPPdRd"></span><span id="read_lat_vec__doublePPR.doubleR"></span>void <code class="descname">read_lat_vec</code><span class="sig-paren">(</span>double **&amp;<em>lat_vec</em>, double &amp;<em>alat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv312read_lat_vecRPPdRd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads lattice vectors from &quot;lat_vec.txt&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv318compute_triple_pdtPPd">
+<span id="_CPPv218compute_triple_pdtPPd"></span><span id="compute_triple_pdt__doublePP"></span>double <code class="descname">compute_triple_pdt</code><span class="sig-paren">(</span>double **<em>vec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318compute_triple_pdtPPd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the scalar triple product of three vectors</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310to_string1i">
+<span id="_CPPv210to_string1i"></span><span id="to_string1__i"></span>string <code class="descname">to_string1</code><span class="sig-paren">(</span>int <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310to_string1i" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts a number to a string through switch statements</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317write_phase_spaceP7ph_modeii">
+<span id="_CPPv217write_phase_spaceP7ph_modeii"></span><span id="write_phase_space__ph_modeP.i.i"></span>void <code class="descname">write_phase_space</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317write_phase_spaceP7ph_modeii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the computed phase spaces (phonon emission or absorption) to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv324write_scat_events_binaryP7ph_modeiiRi">
+<span id="_CPPv224write_scat_events_binaryP7ph_modeiiRi"></span><span id="write_scat_events_binary__ph_modeP.i.i.iR"></span>void <code class="descname">write_scat_events_binary</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em>, int &amp;<em>tot_events</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324write_scat_events_binaryP7ph_modeiiRi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes phonon-phonon scattering events to a binary file to read</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv38write_EkP7el_modeii">
+<span id="_CPPv28write_EkP7el_modeii"></span><span id="write_Ek__el_modeP.i.i"></span>void <code class="descname">write_Ek</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37el_mode" title="el_mode">el_mode</a> *<em>el</em>, int <em>num_kpts</em>, int <em>num_e_bands</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38write_EkP7el_modeii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes kpt and band energy values to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv315find_k_pt_indexdddiii">
+<span id="_CPPv215find_k_pt_indexdddiii"></span><span id="find_k_pt_index__double.double.double.i.i.i"></span>int <code class="descname">find_k_pt_index</code><span class="sig-paren">(</span>double <em>kx</em>, double <em>ky</em>, double <em>kz</em>, int <em>Nk1</em>, int <em>Nk2</em>, int <em>Nk3</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315find_k_pt_indexdddiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Finds the kpt index in the grid associate with a electron phonon wave vector</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv331read_eph_matrix_elements_binaryRP5el_phRiP7ph_mode">
+<span id="_CPPv231read_eph_matrix_elements_binaryRP5el_phRiP7ph_mode"></span><span id="read_eph_matrix_elements_binary__el_phPR.iR.ph_modeP"></span>void <code class="descname">read_eph_matrix_elements_binary</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv35el_ph" title="el_ph">el_ph</a> *&amp;<em>eph</em>, int &amp;<em>num_eph_elements</em>, <a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331read_eph_matrix_elements_binaryRP5el_phRiP7ph_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the ephmatrix file and get the matrix elements associated with every charge-phonon interaction</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv314find_eph_indexiiiiiP5el_phiP7ph_mode">
+<span id="_CPPv214find_eph_indexiiiiiP5el_phiP7ph_mode"></span><span id="find_eph_index__i.i.i.i.i.el_phP.i.ph_modeP"></span>int <code class="descname">find_eph_index</code><span class="sig-paren">(</span>int <em>nk</em>, int <em>nq</em>, int <em>pol</em>, int <em>ibnd</em>, int <em>jbnd</em>, <a class="reference internal" href="Classes Supplementary.html#_CPPv35el_ph" title="el_ph">el_ph</a> *<em>eph</em>, int <em>num_eph_elements</em>, <a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314find_eph_indexiiiiiP5el_phiP7ph_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Finds the eph index in the matrix assoicated with a charge-phonon interaction</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321write_eph_scat_eventsP7ph_modeii">
+<span id="_CPPv221write_eph_scat_eventsP7ph_modeii"></span><span id="write_eph_scat_events__ph_modeP.i.i"></span>void <code class="descname">write_eph_scat_events</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321write_eph_scat_eventsP7ph_modeii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the eph scattering events to an outfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310read_fermiv">
+<span id="_CPPv210read_fermiv"></span><span id="read_fermi"></span>void <code class="descname">read_fermi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310read_fermiv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads adjusted Fermi energies and band bounds from &quot;fermi_contents&quot;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv317write_occupationsP7ph_modeiii">
+<span id="_CPPv217write_occupationsP7ph_modeiii"></span><span id="write_occupations__ph_modeP.i.i.i"></span>void <code class="descname">write_occupations</code><span class="sig-paren">(</span><a class="reference internal" href="Classes Supplementary.html#_CPPv37ph_mode" title="ph_mode">ph_mode</a> *<em>ph</em>, int <em>num_qpts</em>, int <em>num_bands</em>, int <em>time_step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv317write_occupationsP7ph_modeiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Writes the energy occupations of phonons and charges every 0.2 ps to various outfiles</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv34f_FDddd">
+<span id="_CPPv24f_FDddd"></span><span id="f_FD__double.double.double"></span>double <code class="descname">f_FD</code><span class="sig-paren">(</span>double <em>E</em>, double <em>mu</em>, double <em>temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv34f_FDddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the Fermi-Dirac distribution given an energy (e), Fermi energy (mu), and temperature (see also fermi-step)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv35df_FDddd">
+<span id="_CPPv25df_FDddd"></span><span id="df_FD__double.double.double"></span>double <code class="descname">df_FD</code><span class="sig-paren">(</span>double <em>E</em>, double <em>mu</em>, double <em>temperature</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv35df_FDddd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Computes the temperature derivative Fermi-Dirac distribution given an energy (e), Fermi energy (mu), and temperature</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv35deltadd">
+<span id="_CPPv25deltadd"></span><span id="delta__double.double"></span>double <code class="descname">delta</code><span class="sig-paren">(</span>double <em>num</em>, double <em>sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv35deltadd" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Implements the Gaussian approximation for the Dirac-Delta function</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="Phonon_Dynamics.html">Documentation overview</a><ul>
+  <li><a href="Classes and Functions.html">Classes and Functions</a><ul>
+      <li>Previous: <a href="Classes and Functions.html" title="previous chapter">Classes and Functions</a></li>
+      <li>Next: <a href="Classes Supplementary.html" title="next chapter">Classes Supplementary</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Functions Supplementary.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Praveen Balaiji.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/Functions Supplementary.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

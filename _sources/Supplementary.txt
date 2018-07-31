@@ -1,5 +1,6 @@
-.. index::
-   Finding Scattering Events; Classes and Functions
+=============
+Supplementary
+=============
 
 .. py:function:: spam(eggs)
                  ham(eggs)

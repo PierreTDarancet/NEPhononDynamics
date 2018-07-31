@@ -29,6 +29,12 @@ The code offers these other functionalities as well
 | * Graphing phonon thermalization as a function of modes
 
 
+You can read explicit details on classes and functions in the code here
+
+.. toctree::
+
+   Classes and Functions
+
 
 
 

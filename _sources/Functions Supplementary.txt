@@ -1,0 +1,204 @@
+=======================
+Functions Supplementary
+=======================
+
+.. _Home: index.html
+
+.. _Back: genindex.html
+
+.. sidebar:: Links
+   :subtitle: **Main Pages**
+
+   * | Home_  
+   * | Back_
+
+.. py:function:: get_valence(array)
+   
+
+   Retrieves the valence electrons of the compound by looking psuedo-potential files 
+   of the elements
+
+
+.. py:function:: fermi_step(e,ef)
+   
+
+   Computes the Fermi_Dirac distribution given an energy (e) the Fermi energy (ef) at a set temperature
+
+
+.. py:function:: fermi_integrate(num_kpts, num_bnds, ef, set_low=None, set_high=None)
+   
+
+   Computes the number of electrons at a specific energy (ef) by mutiplying the available states, the degeneracy, and the fermi_dirac distribution for that energy
+
+
+.. py:function:: electrons()
+   
+
+   Finds the adjusted Fermi energy for electrons given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events
+
+
+.. py:function:: holes()
+   
+
+   Finds the adjusted Fermi energy for holes given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events
+
+
+.. cpp:function:: void read_omegaq(ph_mode* & ph,int &num_qpts,int &num_bands,int &nat,int &N1,int &N2,int &N3)
+
+   
+   Reads the "band.eig" file to get the number of qpts, bands, number of atoms in a unit, and the dimensions of the q-grid
+
+
+.. cpp:function:: void read_eig(ph_mode* ph,int num_qpts,int num_bands,double *mass,int nat)
+
+
+   Reads eigenvalues from the "matydn.modes"
+
+
+.. cpp:function:: void read_masses(double* & mass,int nat)
+
+   
+   Reads masses from the "masses.txt" file
+
+
+.. cpp:function:: void write_masses(double* mass,int nat)
+
+   
+   Writes masses to an outfile
+
+.. cpp:function:: void write_omegaq(ph_mode *ph,int num_qpts,int num_bands)
+
+   
+   Writes frequencies to an outfile
+
+
+.. cpp:function:: void read_third_order_ifc(anharmonic_ifc* & third_order,int & num_tensors,int nat)
+
+   
+   Reads third-order forces from "FORCE_CONSTANTS_3RD"
+
+
+.. cpp:function:: void write_third_order_ifc(anharmonic_ifc* third_order,int num_tensors)
+
+   
+   Writes third-order forces to an outfile
+
+
+.. cpp:function:: void multiply_c(double num1_r,double num1_i,double num2_r,double num2_i,double & num3_r,double & num3_i)
+
+ 
+   Returns the product of two complex numbers 
+
+
+.. cpp:function:: double compute_matrix_element(int nq1,int nq2,int nq3,int p1,int p2,int p3,int num_qpts,int num_bands,ph_mode* ph,anharmonic_ifc* third_order,int num_tensors,double* mass,double **recip_lat)
+
+ 
+   Computes the phonon-phonon matrix element using the equation provided in the "find_matrix_elements section"
+
+
+.. cpp:function:: double f_BE(double omega,double temperature)
+
+   
+   Computes the Bose-Einstein Distribution given a phonon frequency and a temperature
+
+
+.. cpp:function:: int find_q_pt_index(double qx,double qy,double qz,int N1,int N2,int N3)
+
+   
+  Finds the qpt index in the grid associate with a given phonon wave vector
+
+
+.. cpp:function:: void read_reciprocal_lat(double** & recip_lat)
+
+   
+  Reads recprocial lattice values from "reprocial_lat.txt"
+
+
+.. cpp:function:: void read_lat_vec(double** & lat_vec,double & alat)
+
+   
+  Reads lattice vectors from "lat_vec.txt"
+
+
+.. cpp:function:: double compute_triple_pdt(double **vec)
+
+   
+  Computes the scalar triple product of three vectors
+
+
+.. cpp:function:: string to_string1(int number)
+
+   
+  Converts a number to a string through switch statements
+
+
+.. cpp:function:: void write_phase_space(ph_mode *ph,int num_qpts,int num_bands)
+
+   
+  Writes the computed phase spaces (phonon emission or absorption) to an outfile
+
+
+.. cpp:function:: void write_scat_events_binary(ph_mode *ph,int num_qpts,int num_bands,int & tot_events)
+
+   
+  Writes phonon-phonon scattering events to a binary file to read
+
+
+.. cpp:function:: void write_Ek(el_mode *el,int num_kpts,int num_e_bands)
+
+   
+  Writes kpt and band energy values to an outfile
+
+
+.. cpp:function:: int find_k_pt_index(double kx,double ky,double kz,int Nk1,int Nk2,int Nk3)
+
+   
+   Finds the kpt index in the grid associate with a electron phonon wave vector
+
+
+.. cpp:function:: void read_eph_matrix_elements_binary(el_ph* &eph,int &num_eph_elements,ph_mode *ph)
+
+   
+   Reads the ephmatrix file and get the matrix elements associated with every charge-phonon interaction
+
+
+.. cpp:function:: int find_eph_index(int nk,int nq,int pol,int ibnd,int jbnd,el_ph *eph,int num_eph_elements,ph_mode *ph)
+
+   
+   Finds the eph index in the matrix assoicated with a charge-phonon interaction
+
+
+.. cpp:function:: void write_eph_scat_events(ph_mode* ph,int num_qpts,int num_bands)
+
+   
+   Writes the eph scattering events to an outfile
+
+
+.. cpp:function:: void read_fermi()
+
+   
+   Reads adjusted Fermi energies and band bounds from "fermi_contents"
+
+
+.. cpp:function:: void write_occupations(ph_mode *ph,int num_qpts,int num_bands,int time_step)
+
+   
+   Writes the energy occupations of phonons and charges every 0.2 ps to various outfiles
+
+
+.. cpp:function:: double f_FD(double E,double mu,double temperature)
+
+   
+   Computes the Fermi-Dirac distribution given an energy (e), Fermi energy (mu), and temperature (see also fermi-step)
+
+
+.. cpp:function:: double df_FD(double E,double mu,double temperature)
+
+   
+   Computes the temperature derivative Fermi-Dirac distribution given an energy (e), Fermi energy (mu), and temperature
+
+
+.. cpp:function:: double delta(double num,double sigma)
+
+   
+   Implements the Gaussian approximation for the Dirac-Delta function

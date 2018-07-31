@@ -1,0 +1,31 @@
+====================================================
+Find Fermi Energy and Band Information Supplementary
+====================================================
+
+.. py:function:: get_valence(array)
+   
+
+   Retrieves the valence electrons of the compound by looking psuedo-potential files 
+   of the elements
+
+.. py:function:: fermi_step(e,ef)
+   
+
+   Computes the probability of finding a particle with energy (e) given the Fermi energy (ef)
+
+.. py:function:: fermi_integrate(num_kpts, num_bnds, ef, set_low=None, set_high=None)
+   
+
+   Computes the number of electrons at a specific energy (ef) by mutiplying the available states, the degeneracy, and the fermi_dirac distribution for that energy
+
+
+.. py:function:: electrons()
+   
+
+   Finds the adjusted Fermi energy for electrons given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events
+
+
+.. py:function:: holes()
+   
+
+   Finds the adjusted Fermi energy for holes given a the number of shifted charges using a bisection search. Computes an lower and upper energy band for finding scattering events

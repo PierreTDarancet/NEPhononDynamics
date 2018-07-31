@@ -2,7 +2,33 @@
 Classes and Functions
 =====================
 
-.. _`Find Scattering Events`: Supplementary.html#index-0
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   
+   Functions Supplementary
+   Classes Supplementary
 
 
-**`Find Scattering Events`_**
+.. _Home: index.html
+
+.. _`Classes`: Classes%20Supplementary.html
+
+.. _`Index of functions`: genindex.html
+
+.. sidebar:: Links
+   :subtitle: **Main Pages**
+
+   * | Home_  
+
+**Information about used classes**
+
+* | Classes_
+
+
+**Information about used functions at various steps**
+
+* | `Index of functions`_
+
+
+
