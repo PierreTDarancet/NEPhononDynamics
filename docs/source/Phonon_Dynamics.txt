@@ -6,20 +6,20 @@
 Welcome to Phonon_Dynamics's documentation!
 ===========================================
 
-This code simulates the time-dependent interaction of phonon among themselves as well as with "hot" charge carriers (electrons/holes). This is accomplished by using the Boltzmann transport framework to find the scattering rates of the various interactions and total cumulative energy.
+This code simulates the time-evolutions of phonons in contact with (non-equilibrium) charge carriers (electrons/holes). This is accomplished by solving the Boltzmann transport equation for the coupled electron-, hole- and phonon-subsystems using a direct time-stepping technique. The code can currently model this dynamics in the presence of mode-dependent 3-phonon phonon-phonon interactions and first-order electron-phonon interactions using Fermi Golden Rule. The code is interfaced with EPW and Quantum Espresso. 
 
 The code is divided into multiple steps:
 
 .. toctree::
    :maxdepth: 4
 
-   Assembling inputs
-   Finding phase spaces
+   Assembling first-principles inputs
+   Finding scattering phase spaces
    Computing phonon-phonon matrix elements
    Running phonon dynamics
 
 
-Running the code is acheived through running the bash file **Phonon_Dynamics_1.sh** and **Phonon_Dynamics_2.sh**. The code can run dynamics for holes, electrons, or both.
+Running the code is achieved through running the bash file **Phonon_Dynamics_1.sh** and **Phonon_Dynamics_2.sh**. The code can run dynamics for holes, electrons, or both.
 
 
 The code offers these other functionalities as well
@@ -27,6 +27,13 @@ The code offers these other functionalities as well
 | * Graphing the compound's bandstructure
 | * Graphing the temperature decay of electrons and holes as well as the thermalization of phonons
 | * Graphing phonon thermalization as a function of modes
+
+
+Files Name and Role
+===================
+
+omegaq.freq: Phonon frequencies (in cm-1) read by the find_scattering_events code (no negative/imaginary frequency can be present in this file) 
+phband.freq: Phonon frequencies (in meV) for plotting/analysis purpose
 
 
 
