@@ -3,6 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. _Proposal: https://www.anl.gov/cnm/user-information/call-proposals
+.. _Carbon: https://wiki.anl.gov/cnm/HPC/Hardware_Details  
+
 Welcome to Phonon_Dynamics's documentation!
 ===========================================
 
@@ -35,7 +38,38 @@ Files Name and Role
 omegaq.freq: Phonon frequencies (in cm-1) read by the find_scattering_events code (no negative/imaginary frequency can be present in this file) 
 phband.freq: Phonon frequencies (in meV) for plotting/analysis purpose
 
+Running the Code
+================
 
+Upon approval and activation of a CNM user Proposal_ , the code can be found in the shared directory `/home/share/cnmProposalNumber/`. 
+The code can be run on Carbon_ using the PBS scheduling system. An example script for running on Carbon:
+
+
+    .. code-block:: bash
+       #!/bin/bash
+       #PBS -l nodes=1:ppn=16:gen4
+       #PBS -l walltime=50:00:00
+       #PBS -N ...
+       #PBS -A cnm50326
+       cd $PBS_O_WORKDIR
+       export OMP_NUM_THREADS=16
+       module load gcc/4.9/4.9.3-1
+       g++ -fopenmp ph_dynamics2.cpp
+       ./a.out > filout
+
+Running the same code on Argonne LCRC:
+
+    .. code-block:: bash
+       #!/bin/bash
+       #SBATCH -N 1
+       #SBATCH --ntasks-per-node=36
+       #SBATCH --job-name=sil_dynamics_vb
+       #SBATCH --time=12:00:00
+       #SBATCH -A ...
+       #SBATCH -p bdwall
+       export OMP_NUM_THREADS=36
+       g++ -fopenmp ph_dynamics2.cpp
+       ./a.out > filout
 
 
 
