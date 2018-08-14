@@ -33,29 +33,62 @@
             
   <div class="section" id="welcome-to-phonon-dynamics-s-documentation">
 <h1>Welcome to Phonon_Dynamics's documentation!<a class="headerlink" href="#welcome-to-phonon-dynamics-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>This code simulates the time-dependent interaction of phonon among themselves as well as with &quot;hot&quot; charge carriers (electrons/holes). This is accomplished by using the Boltzmann transport framework to find the scattering rates of the various interactions and total cumulative energy.</p>
+<p>This code simulates the time-evolutions of phonons in contact with (non-equilibrium) charge carriers (electrons/holes). This is accomplished by solving the Boltzmann transport equation for the coupled electron-, hole- and phonon-subsystems using a direct time-stepping technique. The code can currently model this dynamics in the presence of mode-dependent 3-phonon phonon-phonon interactions and first-order electron-phonon interactions using Fermi Golden Rule. The code is interfaced with EPW and Quantum Espresso.</p>
 <p>The code is divided into multiple steps:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Assembling inputs.html">Assembling inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Finding phase spaces.html">Finding phase spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Assembling inputs.html">Assembling first-principles inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Finding phase spaces.html">Finding scattering phase spaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Computing phonon-phonon matrix elements.html">Computing phonon-phonon matrix elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Running phonon dynamics.html">Running phonon dynamics</a></li>
 </ul>
 </div>
-<p>Running the code is acheived through running the bash file <strong>Phonon_Dynamics_1.sh</strong> and <strong>Phonon_Dynamics_2.sh</strong>. The code can run dynamics for holes, electrons, or both.</p>
+<p>Running the code is achieved through running the bash file <strong>Phonon_Dynamics_1.sh</strong> and <strong>Phonon_Dynamics_2.sh</strong>. The code can run dynamics for holes, electrons, or both.</p>
 <p>The code offers these other functionalities as well</p>
 <div class="line-block">
 <div class="line">* Graphing the compound's bandstructure</div>
 <div class="line">* Graphing the temperature decay of electrons and holes as well as the thermalization of phonons</div>
 <div class="line">* Graphing phonon thermalization as a function of modes</div>
 </div>
-<p>You can read explicit details on classes and functions in the code here</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Classes and Functions.html">Classes and Functions</a></li>
-</ul>
 </div>
+<div class="section" id="files-name-and-role">
+<h1>Files Name and Role<a class="headerlink" href="#files-name-and-role" title="Permalink to this headline">¶</a></h1>
+<p>omegaq.freq: Phonon frequencies (in cm-1) read by the find_scattering_events code (no negative/imaginary frequency can be present in this file)
+phband.freq: Phonon frequencies (in meV) for plotting/analysis purpose</p>
+</div>
+<div class="section" id="running-the-code">
+<h1>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline">¶</a></h1>
+<p>Upon approval and activation of a CNM user <a class="reference external" href="https://www.anl.gov/cnm/user-information/call-proposals">Proposal</a> , the code can be found in the shared directory <cite>/home/share/cnmProposalNumber/</cite>.
+The code can be run on <a class="reference external" href="https://wiki.anl.gov/cnm/HPC/Hardware_Details">Carbon</a> using the PBS scheduling system. An example script for running on Carbon:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -l nodes=1:ppn=16:gen4</span>
+<span class="c1">#PBS -l walltime=50:00:00</span>
+<span class="c1">#PBS -N ...</span>
+<span class="c1">#PBS -A cnm50326</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">16</span>
+module load gcc/4.9/4.9.3-1
+g++ -fopenmp ph_dynamics2.cpp
+./a.out &gt; filout
+</pre></div>
+</div>
+</div></blockquote>
+<p>Running the same code on Argonne LCRC:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH --ntasks-per-node=36</span>
+<span class="c1">#SBATCH --job-name=sil_dynamics_vb</span>
+<span class="c1">#SBATCH --time=12:00:00</span>
+<span class="c1">#SBATCH -A ...</span>
+<span class="c1">#SBATCH -p bdwall</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">36</span>
+g++ -fopenmp ph_dynamics2.cpp
+./a.out &gt; filout
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 
 
@@ -63,7 +96,14 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Phonon_Dynamics's documentation!</a></li>
+<li><a class="reference internal" href="#files-name-and-role">Files Name and Role</a></li>
+<li><a class="reference internal" href="#running-the-code">Running the Code</a></li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
