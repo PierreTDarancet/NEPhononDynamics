@@ -16,8 +16,8 @@ The code is divided into multiple steps:
 .. toctree::
    :maxdepth: 4
 
-   Assembling first-principles inputs
-   Finding scattering phase spaces
+   Assembling first-principles inputs <Assembling inputs>
+   Finding scattering phase spaces <Finding phase spaces>
    Computing phonon-phonon matrix elements
    Running phonon dynamics
 
@@ -46,6 +46,7 @@ The code can be run on Carbon_ using the PBS scheduling system. An example scrip
 
 
     .. code-block:: bash
+
        #!/bin/bash
        #PBS -l nodes=1:ppn=16:gen4
        #PBS -l walltime=50:00:00
@@ -60,6 +61,7 @@ The code can be run on Carbon_ using the PBS scheduling system. An example scrip
 Running the same code on Argonne LCRC:
 
     .. code-block:: bash
+
        #!/bin/bash
        #SBATCH -N 1
        #SBATCH --ntasks-per-node=36
@@ -70,7 +72,4 @@ Running the same code on Argonne LCRC:
        export OMP_NUM_THREADS=36
        g++ -fopenmp ph_dynamics2.cpp
        ./a.out > filout
-
-
-
 
