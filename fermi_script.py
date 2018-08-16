@@ -3,9 +3,6 @@ import math
 import urllib.request
 import os
 
-
-# 0.28 charges for -3.6
-
 array = []
 masses = []
 con_band = 0
@@ -26,15 +23,31 @@ emax = 0
 error = 0.001
 kB = 1.3806e-23
 J_ev = 6.242e18
-kT = 3000*kB*J_ev
+
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
 which_charges = input('Input "holes", "electrons", or "both" ')
 while (which_charges != "holes" and which_charges != "electrons" and which_charges != "both"):
 	which_charges = input('Input "holes", "electrons", or "both" ')
 
-num_charges = float(input("Input the number of shifted charges "))
-#num_charges = 0
+num_charges = (input("Input the number of shifted charges "))
+while(not is_number(num_charges)):
+	num_charges = (input("Input the number of shifted charges "))
 
+num_charges = float(num_charges)
+
+temp = (input("Input the temperature of the hot carriers "))
+while(not is_number(temp)):
+	temp = (input("Input the temperature of the hot carriers "))
+
+temp = float(temp)
+
+kT = temp*kB*J_ev
 
 def get_valence(array):
 	a_num = 0
@@ -262,6 +275,8 @@ c = open('fermi_contents', 'a')
 
 c.write("eph_filename\n")
 c.write(eph_filename + "\n")
+c.write("temperature\n")
+c.write(str(temp) + "\n")
 
 f.close()
 c.close()
