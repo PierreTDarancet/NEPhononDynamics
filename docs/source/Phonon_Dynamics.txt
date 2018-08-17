@@ -4,7 +4,8 @@
    contain the root `toctree` directive.
 
 .. _Proposal: https://www.anl.gov/cnm/user-information/call-proposals
-.. _Carbon: https://wiki.anl.gov/cnm/HPC/Hardware_Details  
+.. _Carbon: https://wiki.anl.gov/cnm/HPC/Hardware_Details
+.. _`Auxiliary Functions`: Auxiliary%20Functions.html
 
 Welcome to Phonon_Dynamics's documentation!
 ===========================================
@@ -21,15 +22,22 @@ The code is divided into multiple steps:
    Computing phonon-phonon matrix elements
    Running phonon dynamics
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   Auxiliary Functions
 
 Running the code is achieved through running the bash file **Phonon_Dynamics_1.sh** and **Phonon_Dynamics_2.sh**. The code can run dynamics for holes, electrons, or both.
 
 
 The code offers these other functionalities as well
 
-| * Graphing the compound's bandstructure
-| * Graphing the temperature decay of electrons and holes as well as the thermalization of phonons
-| * Graphing phonon thermalization as a function of modes
+| `Auxiliary Functions`_
+| * Graphing the compound's bandstructure (fermi_graph.py)
+| * Graphing the temperature decay of electrons and holes as well as the thermalization of phonons (temp_plot.py)
+| * Graphing the thermalization of specific phonon modes (ph_thermalization_graph.py)
+| * Specficiying the individual component energies and total energy in the system as a function of time (energy_graph.py)
 
 
 Files Name and Role

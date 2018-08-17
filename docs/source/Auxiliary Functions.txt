@@ -1,0 +1,29 @@
+===================
+Auxiliary Functions
+===================
+
+**Need matplotlib and ability to input**
+
+| **Graphing the compound's bandstructure**
+| * **File**: fermi_script.py
+| * **Necessities**: "band.eig" File in the same directory
+| * **Input**: no input
+| * **Product**: Graph of the compound's bandstructure
+
+| **Graphing the temperature decay of electrons and holes as well as the thermalization of phonons**
+| * **File**: temp_plot.py
+| * **Necessities**: "T_e.txt" file, "T_Ph.txt" file (running ph_temp.py with dynamics/output in the same directory creates the file) in the same directory
+| * **Input**: no input
+| * **Product**: Graph of the particles' temperatures over time
+
+| **Graphing the thermalization of specific phonon modes**
+| * **File**: ph_thermalization_graph.py
+| * **Necessities**: "fermi_contents" and "omegaq.freq" in the input folder, and the phonon file and "T_e.txt" in the same directory
+| * **Input**: phonon file name, the time, and the path in coordinates
+| * **Product**: Graph of path-depenedent phonon thermalization
+
+| **Specficiying the individual component energies and total energy in the system as a function of time**
+| * **File**: energy_graph.py
+| * **Necessities**: "fermi_contents", "omegaq.freq", "band.eig", and "grid_info.txt" in the Input folder, and "d_values" (contains values for unit dv for phonons and carriers) and "T_e.txt" in the same directory
+| * **Input**: Ef and Hf
+| * **Product**: "energy_File" which contains phonon energy, carrier energy, and total energy as a function of time
